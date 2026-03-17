@@ -7,16 +7,25 @@ import { login } from "./actions";
 export function LoginForm() {
   const [state, loginAction] = useActionState(login, undefined);
   return (
-    <form action={loginAction} className="flex max-w-[300px] flex-col gap-2">
+    <form
+      action={loginAction}
+      className="flex w-80 flex-col gap-4 rounded-lg border border-gray-200 bg-white p-8"
+    >
+      <div className="flex flex-col gap-2 text-black">
+        <input
+          className="w-full rounded border border-gray-200 px-4 py-3 text-black outline-none focus:border-black transition-colors"
+          id="email"
+          name="email"
+          placeholder="Email"
+        />
+      </div>
       {state?.errors.email && (
         <p className="text-red-500">{state.errors.email}</p>
       )}
-      <div className="flex flex-col gap-2">
-        <input id="email" name="email" placeholder="Email" />
-      </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 text-black">
         <input
+          className="w-full rounded border border-gray-200 px-4 py-3 text-black outline-none focus:border-black transition-colors"
           id="password"
           name="password"
           type="password"
@@ -31,12 +40,15 @@ export function LoginForm() {
   );
 }
 
-// TODO: not sure how I feel about the button being in this file
 function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <button disabled={pending} type="submit">
+    <button
+      className="w-full h-12 rounded-lg font-medium text-bold text-white disabled:opacity-50 bg-blue-600 hover:bg-indigo-800 transition-colors"
+      disabled={pending}
+      type="submit"
+    >
       Login
     </button>
   );
