@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { login } from "./actions";
+import Button from "../components/Button";
 
 export function LoginForm() {
   const [state, loginAction] = useActionState(login, undefined);
@@ -44,12 +45,8 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="w-full h-12 rounded-lg font-medium text-bold text-white disabled:opacity-50 bg-blue-600 hover:bg-indigo-800 transition-colors"
-      disabled={pending}
-      type="submit"
-    >
+    <Button type="submit" disabled={pending}>
       Login
-    </button>
+    </Button>
   );
 }
