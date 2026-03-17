@@ -1,6 +1,5 @@
 "use server";
 
-import { error } from "console";
 import { z } from "zod";
 import { createSession } from "../lib/session";
 import { redirect } from "next/navigation";
@@ -10,7 +9,7 @@ import { RedirectType } from "next/navigation";
 const testUser = {
   id: "1",
   email: "email@domain.com",
-  password: "123456",
+  password: "12345678",
 };
 
 const loginSchema = z.object({
@@ -27,7 +26,17 @@ export async function login(prevState: any, formData: FormData) {
 
   if (!result.success) {
     return {
-      errors: z.treeifyError(result.error),
+      errors: result.error.issues.reduce(
+        (acc, issue) => {
+          const key = issue.path[0] as string;
+          if (key) {
+            acc[key] = acc[key] ?? [];
+            acc[key].push(issue.message);
+          }
+          return acc;
+        },
+        {} as Record<string, string[]>,
+      ),
     };
   }
 

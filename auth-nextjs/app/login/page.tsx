@@ -1,3 +1,9 @@
+import { LoginForm } from "./LoginForm";
+
 export default function Login() {
-  return <div>{/* LoginForm component */}</div>;
+  return (
+    <div>
+      <LoginForm />
+    </div>
+  );
 }
