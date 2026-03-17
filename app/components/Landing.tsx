@@ -20,18 +20,23 @@ export default function Landing() {
       <div className="flex items-center gap-2 mb-8 animate-fade-in">
         <span className="h-[4px] w-6 bg-blue-600 rounded-full" />
         <p className="text-sm font-semibold tracking-tight text-gray-900">
-          Next.js Full-Stack Implementation
+          Janet Scanlon's Next.js Full-Stack Implementation
         </p>
       </div>
 
       <h1 className="max-w-4xl text-5xl md:text-7xl font-bold tracking-tight text-black mb-8 leading-[1.1]">
-        Built to speak Hopae's <br />
+        Built to speak{" "}
+        <span className={`${playfair.className} italic text-black`}>h</span>
+        <span className="text-black font-sans font-medium -ml-0.5">opae's</span>
+        <span className="text-[#f9963f] not-italic">.</span>
+        {/* <span className="text-black font-sans font-medium font-bold">'s</span> */}
+        <br />
         <span className="text-gray-900/90">global language(s)</span>
       </h1>
 
       <p className="max-w-2xl text-lg md:text-xl text-gray-500 font-medium mb-12 leading-relaxed">
-        This is an end-to-end login system utilizing Next.js in order to
-        illustrate{" "}
+        This is an end-to-end login system utilizing Next.js, JWT tokens, server
+        actions, and HttpOnly cookies to illustrate{" "}
         <span className={`${playfair.className} italic text-black`}>j</span>
         <span className="text-black font-sans font-medium ml-0.5">
           anet's
