@@ -18,6 +18,7 @@ export function LoginForm() {
           id="email"
           name="email"
           placeholder="Email"
+          defaultValue="email@domain.com"
         />
       </div>
       {state?.errors.email && (
@@ -31,6 +32,7 @@ export function LoginForm() {
           name="password"
           type="password"
           placeholder="Password"
+          defaultValue="12345678"
         />
       </div>
       {state?.errors.password && (
@@ -46,7 +48,7 @@ function SubmitButton() {
 
   return (
     <Button type="submit" disabled={pending} variant="blue">
-      Login
+      {pending ? "Logging in" : "Login"}
     </Button>
   );
 }

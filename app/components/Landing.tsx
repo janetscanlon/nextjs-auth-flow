@@ -25,8 +25,8 @@ export default function Landing() {
       </div>
 
       <h1 className="max-w-4xl text-5xl md:text-7xl font-bold tracking-tight text-black mb-8 leading-[1.1]">
-        The digital identity layer <br />
-        <span className="text-gray-900/90">for the internet</span>
+        Built to speak Hopae's <br />
+        <span className="text-gray-900/90">global language(s)</span>
       </h1>
 
       <p className="max-w-2xl text-lg md:text-xl text-gray-500 font-medium mb-12 leading-relaxed">
@@ -36,7 +36,7 @@ export default function Landing() {
         <span className="text-black font-sans font-medium ml-0.5">
           anet's
         </span>{" "}
-        technical skill and commitment to{" "}
+        technical skill and dedication to{" "}
         <span className={`${playfair.className} italic text-black`}>h</span>
         <span className="text-black font-sans font-medium -ml-0.5">opae</span>
         <span className="text-[#f9963f] font-bold not-italic">.</span>

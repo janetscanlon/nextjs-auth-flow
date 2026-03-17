@@ -8,8 +8,8 @@ import { RedirectType } from "next/navigation";
 // mock user
 const testUser = {
   id: "1",
-  email: "email@domain.com",
-  password: "12345678",
+  email: process.env.TEST_USER_EMAIL!,
+  password: process.env.TEST_USER_PASSWORD,
 };
 
 const loginSchema = z.object({
