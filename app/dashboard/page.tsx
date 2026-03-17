@@ -1,7 +1,6 @@
 "use client";
 
 import Landing from "../components/Landing";
-import { logout } from "../login/actions";
 
 export default function Dashboard() {
   return (
