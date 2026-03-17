@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { createSession } from "../lib/session";
+import { createSession, deleteSession } from "../lib/session";
 import { redirect } from "next/navigation";
 import { RedirectType } from "next/navigation";
 
@@ -56,4 +56,7 @@ export async function login(prevState: any, formData: FormData) {
   redirect("/dashboard", RedirectType.push);
 }
 
-export async function logout() {}
+export async function logout() {
+  await deleteSession();
+  redirect("/dashboard");
+}
