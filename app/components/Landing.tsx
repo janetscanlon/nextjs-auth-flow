@@ -14,10 +14,6 @@ const handleButtonClick = (url: string) => {
   window.open(url, "_blank", "noopener,noreferrer");
 };
 
-const handleExternalLink = () => {
-  handleButtonClick("https://github.com/janetscanlon/nextjs-auth-flow");
-};
-
 export default function Landing() {
   return (
     <section className="flex flex-col items-center justify-center px-4 py-24 text-center bg-white">
