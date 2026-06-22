@@ -10,8 +10,12 @@ const playfair = Playfair_Display({
   weight: "900",
 });
 
+const handleButtonClick = (url: string) => {
+  window.open(url, "_blank", "noopener,noreferrer");
+};
+
 const handleExternalLink = () => {
-  window.location.href = "https://github.com/janetscanlon/nextjs-auth-flow";
+  handleButtonClick("https://github.com/janetscanlon/nextjs-auth-flow");
 };
 
 export default function Landing() {
@@ -48,7 +52,14 @@ export default function Landing() {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4">
-        <Button onClick={handleExternalLink} variant="blue">
+        <Button
+          onClick={() =>
+            handleButtonClick(
+              "https://github.com/janetscanlon/nextjs-auth-flow",
+            )
+          }
+          variant="blue"
+        >
           View The Repository
         </Button>
         <Button onClick={logout} variant="gray">
